@@ -3,7 +3,7 @@
   <?php include 'header.php' ?>
   <main>
     <video autoplay="1" loop="1" muted="1" preload="auto">
-      <source src="./src/media/background_video.mp4" type="video/mp4">
+      <source src="https://wilsonforms.vercel.app/api/src/media/background_video.mp4" type="video/mp4">
     </video>
     <div id="intro" class="shadow-2-strong">
       <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
