@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчет медэксперта</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
+  <link rel="stylesheet" href="/src/css/popup.css">
+</head>
+<body class="wrapper">
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .wrapper { max-width: 1000px; position: relative; margin: 50px auto;}
+    .content { border: 1px solid black; padding: 5px;}
+  </style>
+  <!-- <input type="text" class="form-control" placeholder="" name="" /> -->
+  <form id="csureport" method="post">
+    <div class="content">
+      <div style="float:left;padding:0 10px"><img src="https://www.upload.ee/image/13524422/FSTD.png" class="postimage" alt="Изображение"></div>
+      <div style="float:right;padding:0 10px"><span style="font-size:85%;line-height:116%">Город Лос-Сантос, СА<br>
+        район Веспуччи, Сан-Андреас авеню<br>
+        Криминалистическая лаборатория<br>
+        +1 (212) 6789 807</span>
+      </div>
+      <strong class="text-strong"><span style="font-size:125%;line-height:116%"><span style="color:#004080">Los Santos Police Department</span></span></strong><br>
+      <strong class="text-strong"><span style="font-size:100%;line-height:116%"><span style="color:#004080">Forensic Analysis Report System</span></span></strong><br>
+      <br>
+      <ooc style="border:1px solid grey;padding:5px">FOR OFFICIAL USE ONLY</ooc>
+      <br>
+      <br>
+      <div style="float:left;padding:0 10px">
+        <span style="font-size:85%;line-height:116%"><strong class="text-strong">Ответственный специалист</strong> </span><br>
+        <span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ДОЛЖНОСТЬ ИМЯ ФАМИЛИЯ" id="str1" /></span><br>
+        <span style="font-size:85%;line-height:116%"><strong class="text-strong">Для связи</strong> </span><br>
+        <span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ВАШ НОМЕР ТЕЛЕФОНА" id="str2" /></span>
+      </div>
+      <div style="float:right;padding:0 10px">
+        <span style="font-size:85%;line-height:116%"><strong class="text-strong">Тип инцидента</strong> </span>
+        <div style="text-align:center"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="УКАЗАТЬ" id="str3" /></span></div><br>
+        <div style="text-align:center"><span style="font-size:85%;line-height:116%"><strong class="text-strong">No. отчёта</strong></span></div>
+        <div style="text-align:center"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="УКАЗАТЬ" id="str4" /></span></div>
+      </div>
+      <br><br>
+      <br><br>
+      <br><br><br>
+      <div style="text-align:center">
+        <div style="border-bottom:1px solid black;padding:1px"><span style="font-size:125%;line-height:116%"><strong class="text-strong"><input type="text" class="form-control d-inline" placeholder="" id="str5" style="width: 200px;" /> REPORT</strong></span></div>
+      </div>
+      <div style="float:left;padding:0 10px">
+        <input type="text" class="form-control" placeholder="КОД ЭКСПЕРТИЗЫ" id="str6" />
+      </div>
+      <div style="float:right;padding:0 10px">
+        <span style="font-size:85%;line-height:116%">
+          Запрошено: <input type="text" class="form-control" placeholder="МММ ДД, ГГГГ" id="str7" /><br>
+          Возвращено: <input type="text" class="form-control" placeholder="МММ ДД, ГГГГ" id="str8" />
+        </span>
+      </div>
+      <!-- <input type="text" class="form-control" placeholder="" id="str" /> -->
+      <br><br>
+      <span style="font-size:90%;line-height:116%"><strong class="text-strong">На исследование представлено:</strong></span> <span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Полное описание объекта с запроса." id="str9" style="width: 500px;" /></span><br>
+      <span style="font-size:90%;line-height:116%">Применяются следующие <strong class="text-strong">методы анализа</strong>: <input type="text" class="form-control" placeholder="Заполнить" id="str10" style="width: 500px;" /></span><br>
+      <br>
+      <span style="font-size:90%;line-height:116%"><strong class="text-strong">Результаты и заключение:</strong></span><br>
+      <span style="font-size:85%;line-height:116%">
+        1. <input type="text" class="form-control d-inline" placeholder="" id="str11" style="width: 500px;" /><br><br>
+        2. <input type="text" class="form-control d-inline" placeholder="" id="str12" style="width: 500px;" /><br><br>
+        3. <input type="text" class="form-control d-inline" placeholder="" id="str13" style="width: 500px;" /></span><br>
+      <br>
+      <div align="right"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить" id="str14" style="width: 500px;" /></span></div>
+      <div style="width:100%;border-bottom:1px solid silver"> </div>
+      <span style="font-size:85%;line-height:116%"></span>
+      <div style="text-align:center"><span style="font-size:85%;line-height:116%">© 2022 FARS. Forensic Science &amp; Technical Division</span></div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary container-fluid" data-mdb-toggle="modal" data-mdb-target="#exampleModal" onclick="examreport()">Показать код</button>
+  </form>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Форма ответа на запрос экспертизы</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="code"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Закрыть окно</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function examreport() {
+      var writeCode = document.getElementById('code');
+
+      var backhomeForm = document.getElementById('code');
+
+      document.getElementById("exampleModal").classList.toggle("active");
+      writeCode.innerHTML = "<code> \
+        [float=left][img]https://www.upload.ee/image/13524422/FSTD.png[/img][/float]<br> \
+        [float=right][size=85]Город Лос-Сантос, СА<br> \
+        район Веспуччи, Сан-Андреас авеню<br> \
+        Криминалистическая лаборатория<br> \
+        +1 (212) 6789 807[/size][/float]<br> \
+        [b][size=125][color=#004080]Los Santos Police Department[/color][/b][/size]<br> \
+        [b][size=100][color=#004080]Forensic Analysis Report System[/color][/b][/size]<br> \
+        <br>\
+        [adp]FOR OFFICIAL USE ONLY[/adp]<br> \
+        <br>\
+        <br>\
+        [float=left][size=85][b]Ответственный специалист[/b] [/size]<br> \
+        [size=85]"+document.getElementById('str1').value+"[/size]<br> \
+        <br>\
+        [size=85][b]Для связи[/b] [/size]<br> \
+        [size=85]"+document.getElementById('str2').value+"[/size][/float]<br> \
+        <br>\
+        [float=right][size=85][b]Тип инцидента[/b] [/size]<br> \
+        [center][size=85]"+document.getElementById('str3').value+"[/size][/center]<br> \
+        <br>\
+        <br>\
+        <br>\
+        [center][size=85][b]No. отчёта[/b][/size][/center]<br> \
+        [center][size=85]"+document.getElementById('str4').value+"[/size][/center][/float]<br> \
+        [br][/br]<br> \
+        [br][/br]<br> \
+        [br][/br]<br> \
+        [br][/br]<br> \
+        [center][borderb=black][size=125][b]"+document.getElementById('str5').value+" REPORT[/b][/size][/borderb][/center] <br>\
+        [float=left]"+document.getElementById('str6').value+"[/float][float=right][size=85]Запрошено: "+document.getElementById('str7').value+" <br>\
+        Возвращено: "+document.getElementById('str8').value+"[/size][/float] <br>\
+        [br][/br][br][/br][size=90][b]На исследование представлено:[/b][/size] [size=85]"+document.getElementById('str9').value+"[/size] <br>\
+        [size=90]Применяются следующие [b]методы анализа[/b]: "+document.getElementById('str10').value+"[/size] <br>\
+        \
+        [size=90][b]Результаты и заключение:[/b][/size] <br>\
+        [size=85]1. "+document.getElementById('str11').value+" <br>\
+        2. "+document.getElementById('str12').value+" <br>\
+        3. "+document.getElementById('str13').value+"[/size] <br>\
+        <br>\
+        <br>\
+        [right][size=85]"+document.getElementById('str14').value+"[/size][/right] \
+        [hr][/hr][size=85][center]© 2022 FARS. Forensic Science & Technical Division[/center][/size]</code>";
+    }
+  </script>
+</body>
+</html>
