@@ -132,7 +132,7 @@
           <div style="background: rgb(245, 245, 245); border-top: 1px solid rgb(195, 203, 209); padding: 6px; display: none;"><input type="text" class="form-control" placeholder="Вставлять ссылкой на имгур" id="str8" /></div>
         </div>
         <br>
-        <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d"><span><span style="font-size:90%;line-height:116%"><span style="color:#000000">Материалы фото- или видеоформата, сделанные <em class="text-italics">криминалистом-техником <input type="text" class="form-control" placeholder="Имя Фамилия" id="str9" /></em> из группы реагирования на места преступлений. Адресная пометка изучаемой сцены преступления: <em class="text-italics">улица (пересечение), район</em>.</span></span></span></div>
+        <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d"><span><span style="font-size:90%;line-height:116%"><span style="color:#000000">Материалы фото- или видеоформата, сделанные <em class="text-italics">криминалистом-техником <input type="text" class="form-control" placeholder="Имя Фамилия" id="str9" /></em> из группы реагирования на места преступлений. Адресная пометка изучаемой сцены преступления: <em class="text-italics"><input type="text" class="form-control" placeholder="улица (пересечение), район" id="str10" /></em>.</span></span></span></div>
         <br>
       </div>
       <div style="padding:10px;background-color:#4c5866">
@@ -198,7 +198,7 @@
         [br]<br> \
         [spoilers='Видео-, фотоматериалы со сцены преступления']"+document.getElementById('str8').value+"[/spoilers]<br> \
         [br]<br> \
-        [warning][size=90][color=#000000]Материалы фото- или видеоформата, сделанные [i]криминалистом-техником "+document.getElementById('str9').value+"[/i] из группы реагирования на места преступлений. Адресная пометка изучаемой сцены преступления: [i]улица (пересечение), район[/i].[/size][/color][/warning]<br> \
+        [warning][size=90][color=#000000]Материалы фото- или видеоформата, сделанные [i]криминалистом-техником "+document.getElementById('str9').value+"[/i] из группы реагирования на места преступлений. Адресная пометка изучаемой сцены преступления: [i]"+document.getElementById('str10').value+"[/i].[/size][/color][/warning]<br> \
         [br][/textarea]<br> \
         [box=#4c5866][size=100][b][color=#FFFFFF][size=85][center]© 2022 FSTD. Los Santos Police Department.[/center][/size][/color][/b][/size][/box]</code>";
     }
