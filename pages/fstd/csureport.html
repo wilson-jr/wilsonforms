@@ -4,269 +4,201 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Отчет медэксперта</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
-  <link rel="stylesheet" href="/src/css/popup.css">
+  <title>Запрос на исследование</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body class="wrapper">
+   <script type="text/javascript">
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+    });
+   </script>
   <style>
-    body { font-family: 'Roboto', sans-serif; }
+    body { font-family: 'Inter', sans-serif; }
     .wrapper { max-width: 1000px; position: relative; margin: 50px auto;}
-    .content { border: 1px solid black; padding: 5px;}
+    .noselect { user-select: none; }
   </style>
-  <!-- <input type="text" class="form-control" placeholder="" name="" /> -->
-  <form id="csureport" method="post">
-    <div class="content">
-      <div style="float:left; padding:0 10px">
-        <img src="https://www.upload.ee/image/13524422/FSTD.png" class="postimage" alt="Логотип">
-      </div>
-      <div style="float:right; padding:0 10px">
-        <span style="font-size:85%;line-height:116%">Город Лос-Сантос, СА<br>район Веспуччи, Сан-Андреас авеню<br>Судебно-медицинская лаборатория<br>+1 (212) 6789 807</span>
-      </div>
-      <strong class="text-strong"><span style="font-size:125%;line-height:116%"><span style="color:#004080">Los Santos Police Department</span></span></strong><br>
-      <strong class="text-strong"><span style="font-size:100%;line-height:116%"><span style="color:#004080">Forensic Analysis Report System</span></span></strong><br>
-      <br>
-      <ooc style="border: 1px solid grey; padding:5px">FOR OFFICIAL USE ONLY</ooc><br><br>
-      <br>
-      <div style="text-align:center">
-        <div style="border-bottom: 1px solid black; padding:1px">
-          <span style="font-size:125%; line-height:116%"><strong class="text-strong">CRIME SCENE INVESTIGATION NARRATIVE</strong></span>
+  <div class="py-5 text-center">
+    <h2><strong>Форма полевого отчета медицинского эксперта.</strong></h2>
+    <p class="lead">Наведитесь на иконку в поле ввода, чтобы понять что указывать.</p>
+  </div>
+  <form id="csureport" method="post" class="noselect">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-sm-6 input-group" style="width: 50%;">
+          <span class="input-group-text"><i class="bi bi-person-fill" data-toggle="tooltip" title="Ответственный эксперт."></i></span>
+          <input type="text" class="form-control" id="forensicFullName" placeholder="Должность имя, фамилия">
+        </div>
+
+        <div class="col-sm-6 input-group" style="width: 50%;">
+          <span class="input-group-text"><i class="bi bi-phone-fill" data-toggle="tooltip" title="Ответственный офицер."></i></span>
+          <input type="text" class="form-control" id="officerFullName" placeholder="Должность имя, фамилия">
+        </div>
+
+        <div class="col-sm-6 input-group" style="width: 50%;">
+          <span class="input-group-text"><i class="bi bi-clipboard2-fill" data-toggle="tooltip" title="Ваш номер телефона."></i></span>
+          <input type="text" class="form-control" id="phoneNumber" placeholder="Введите номер">
+        </div>
+
+        <div class="col-sm-6 input-group" style="width: 50%;">
+          <span class="input-group-text"><i class="bi bi-hash" data-toggle="tooltip" title="Номер отчета."></i></span>
+          <input type="text" class="form-control" id="reportNumber" placeholder="N 00X/MM-DD">
         </div>
       </div>
-      <br>
-      <div style="float:left;padding:0 10px">
-        <span style="font-size:85%;line-height:116%"><strong class="text-strong">Ответственный эксперт</strong> </span><br>
-        <span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ДОЛЖНОСТЬ ИМЯ ФАМИЛИЯ" id="rns" name="rns" /></span><br>
-        <br>
-        <span style="font-size:85%;line-height:116%"><strong class="text-strong">Для связи</strong> </span><br>
-        <span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ВАШ НОМЕР ТЕЛЕФОНА" id="pn" name="pn" /></span></div>
-        <div style="float:right;padding:0 10px">
-          <span style="font-size:85%;line-height:116%"><strong class="text-strong">Ответственный офицер</strong> </span>
-          <div style="text-align:center"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ДОЛЖНОСТЬ ИМЯ ФАМИЛИЯ" id="orns" name="orns" /></span></div>
-          <br>
-          <div style="text-align:center"><span style="font-size:85%;line-height:116%"><strong class="text-strong">No. отчёта</strong></span></div>
-          <div style="text-align:center"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="N 00X/MM-DD" id="rn" name="rn" /></span></div></div>
-          <br><br>
-          <br><br>
-          <br><br>
-          <br>
-          <div style="text-align:center">
-            <div style="border-bottom:1px solid black;padding:1px">
-              <span style="font-size:125%;line-height:116%"><strong class="text-strong">DEAD BODY INSPECTION CARD</strong></span>
-            </div>
-          </div>
-          <br>
-          <span style="font-size:90%;line-height:116%"><strong class="text-strong">Тип смерти:</strong></span>
-          <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d">
-            <span>
-              <span style="color:#000000">
-                <span style="font-size:85%;line-height:116%">Укажите тип инцидента, исходя из имеющихся в вашем распоряжении сведений, заменив обозначение (–) на (✓).</span>
-              </span>
-            </span>
-          </div>
-          <table border="0">
-            <tbody>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Насильственная смерть</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathType_vd" name="deathType_vd" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Несчастный случай</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathType_acc" name="deathType_acc" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Подозрительная смерть</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathType_sd" name="deathType_sd" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Инцидент, связанный с преступной группировкой</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathType_iicg" name="deathType_iicg" /></span></td>
-              </tr>
-            </tbody>
-          </table>
-          <br><span style="font-size:90%;line-height:116%"><strong class="text-strong">Характер смерти:</strong></span>
-          <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d"><span><span style="color:#000000"><span style="font-size:85%;line-height:116%">Классификация характера смерти по установленным в ходе осмотра предварительным обстоятельствам. Отметьте (✓).</span></span></span></div>
-          <table border="0">
-            <tbody>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;">
-                <span style="font-size:85%;line-height:116%"><strong class="text-strong">Несчастный случай</strong></span>
-                </td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathManner_acc" name="deathManner_acc" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Суицид</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathManner_suicide" name="deathManner_suicide" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Убийство</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathManner_homicide" name="deathManner_homicide" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Естественная смерть</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathManner_nd" name="deathManner_nd" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Не установлен</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathManner_notinstalled" name="deathManner_notinstalled" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Расследуется</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" value="–" placeholder="–" id="deathManner_underinvestigation" name="deathManner_underinvestigation" /></span></td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-          <span style="font-size:90%;line-height:116%"><strong class="text-strong">Детали и установленные обстоятельства:</strong></span>
-          <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d">
-            <span>
-              <span style="color:#000000"><span style="font-size:85%;line-height:116%">Установленные в ходе осмотра места тела трупа обстоятельства, связанные с обстоятельствами наступления смерти лица.</span></span></span>
-          </div>
-          <table border="0">
-            <tbody>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Личные данные жертвы:</strong></span></td><td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить Имя Фамилия" id="victimsID_namesurname" name="victimsID_namesurname" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить возраст" id="victimsID_age" name="victimsID_age" /></span></td><td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить пол" id="victimsID_sex" name="victimsID_sex" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить расу" id="victimsID_race" name="victimsID_race" /></span></td>
-              </tr>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Место обнаружения трупа:</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;">
-                  <span style="font-size:85%;line-height:116%">
-                    <select class="form-select" id="scene_place" name="scene_place">
-                      <option selected disabled>Выберите место</option>
-                      <option value="Лос-Сантос">Лос-Сантос</option>
-                      <option value="Палето-Бэй">Палето-Бэй</option>
-                      <option value="Сэнди-Шорс">Сэнди-Шорс</option>
-                      <option value="Округ Боун">Округ Боун</option>
-                    </select>
-                  </span>
-                </td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Район" id="scene_area" name="scene_area" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Трасса / Дорога" id="scene_road" name="scene_road" /></span></td>
-              </tr>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Время обнаружения трупа:</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="МММ ДД, ГГГ" id="tdb_date" name="tdb_date" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ЧЧ:ММ АМ/ПМ" id="tdb_time" name="tdb_time" /></span></td>
-              </tr>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Время транспортировки трупа:</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="МММ ДД, ГГГ" id="btt_date" name="btt_date" /></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="ЧЧ:ММ АМ/ПМ" id="btt_time" name="btt_time" /></span></td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-          <span style="font-size:90%;line-height:116%"><strong class="text-strong">Комментарии судебно-медицинского эксперта:</strong></span>
-          <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d">
-            <span><span style="color:#000000"><span style="font-size:85%;line-height:116%">Дополнительные сведения, комментарии и обстоятельства, изложенные экспертом в ходе работы на месте преступления.</span></span></span>
-          </div>
-          <table border="0">
-            <tbody>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Осмотр тела, его положения, характера травм:</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить" id="comment_bodycheck" name="comment_bodycheck" /></span></td>
-              </tr>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Осмотр места преступления:</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить" id="comment_placecheck" name="comment_placecheck" /></span></td>
-              </tr>
-              <tr>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><strong class="text-strong">Иные обстоятельства:</strong></span></td>
-                <td style="padding:5px; border: 1px solid #dfdfdf; vertical-align: top;"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Заполнить" id="comment_other" name="comment_other" /></span></td>
-              </tr>
-            </tbody>
-          </table>
-          <br><span style="font-size:90%;line-height:116%"><strong class="text-strong">Фотографические материалы:</strong></span>
-          <div style="padding:5px;background-color:#ecd5d8;color:#bc2a4d">
-            <span><span style="color:#000000"><span style="font-size:85%;line-height:116%">Фотофиксация тела трупа в исходном положении, произведенная экспертом на месте преступления.</span></span></span>
-          </div>
-          <div style="padding:3px;background-color:#fff;border:1px solid #d8d8d8;font-size:1em">
-          <div style="text-transform:uppercase;border-bottom:1px solid #ccc;margin-bottom:3px;font-size:0.8em;font-weight:bold;display:block">
-            <span onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') {  this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerHTML = '<b>SPOILER: </b><a href=\'#\' onClick=\'return false;\'>hide</a>'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerHTML = '<b>SPOILER: </b><a href=\'#\' onClick=\'return false;\'>show</a>'; }"><b>SPOILER: </b><a href="#" onclick="return false;">show</a></span>
-          </div>
-          <div class="quotecontent">
-            <div style="display: none;"><input type="text" class="form-control" placeholder="Фото тела и скриншот /damages или /cdamages" id="photo_links" name="photo_links" /></div>
-          </div>
+      <hr class="my-4">
+      <h4>Тип смерти</h4>
+      <p class="mb-3">Укажите тип инцидента, исходя из имеющихся в вашем распоряжении сведений, заменив обозначение (–) на (✓).</p>
+      <div class="row g-3 mb-5">
+        <div class="col input-group">
+          <span class="input-group-text">Насильственная смерть</span>
+          <input type="text" class="form-control" id="deathType_1" placeholder="–" value="–/✓">
         </div>
-        <br>
-        <div align="right"><span style="font-size:85%;line-height:116%"><input type="text" class="form-control" placeholder="Подпись эксперта" id="sign" name="sign" /></span></div>
-        <div style="width:100%;border-bottom:1px solid silver"> </div>
-        <span style="font-size:85%;line-height:116%"></span>
-        <div style="text-align:center"><span style="font-size:85%;line-height:116%">© 2022 FARS. Forensic Science &amp; Technical Division</span></div>
+        <div class="col input-group">
+          <span class="input-group-text">Несчастный случай</span>
+          <input type="text" class="form-control" id="deathType_2" placeholder="–" value="–">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text">Подозрительная смерть</span>
+          <input type="text" class="form-control" id="deathType_3" placeholder="–" value="–">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text">Инцидент, связанный с преступной группировкой</span>
+          <input type="text" class="form-control" id="deathType_4" placeholder="–" value="–">
+        </div>
       </div>
-    </div><br>
-    <button type="button" class="btn btn-primary container-fluid" data-mdb-toggle="modal" data-mdb-target="#exampleModal" onclick="csureport()">Показать код</button>
+
+      <h4>Характер смерти</h4>
+      <p class="mb-3">Классификация характера смерти по установленным в ходе осмотра предварительным обстоятельствам. Отметьте (✓).</p>
+      <div class="row g-3 mb-3">
+        <div class="col input-group">
+          <span class="input-group-text">Несчастный случай</span>
+          <input type="text" class="form-control" id="deathMethod_1" placeholder="–" value="–/✓">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text">Суицид</span>
+          <input type="text" class="form-control" id="deathMethod_2" placeholder="–" value="–">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text">Убийство</span>
+          <input type="text" class="form-control" id="deathMethod_3" placeholder="–" value="–">
+        </div>
+      </div>
+      <div class="row g-3 mb-5">
+        <div class="col input-group">
+          <span class="input-group-text">Естественная смерть</span>
+          <input type="text" class="form-control" id="deathMethod_4" placeholder="–" value="–">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text">Не установлен</span>
+          <input type="text" class="form-control" id="deathMethod_5" placeholder="–" value="–">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text">Расследуется</span>
+          <input type="text" class="form-control" id="deathMethod_6" placeholder="–" value="–">
+        </div>
+      </div>
+      
+      <h4>Детали и установленные обстоятельства</h4>
+      <p class="mb-3">Установленные в ходе осмотра места тела трупа обстоятельства, связанные с обстоятельствами наступления смерти лица.</p>
+      <div class="row g-3 mb-5">
+        <div class="input-group">
+          <span class="input-group-text">Личные данные жертвы</span>
+          <input type="text" aria-label="Имя, фамилия" id="victimFullName" placeholder="Имя, фамилия" class="form-control">
+          <input type="text" aria-label="Возраст" id="victimAge" placeholder="Возраст" class="form-control">
+          <select class="form-select" id="victimSex">
+            <option selected disabled>Биологический пол</option>
+            <option value="Мужской">Мужской</option>
+            <option value="Женский">Женский</option>
+          </select>
+          <select class="form-select" id="victimRace">
+            <option selected disabled>Раса</option>
+            <option value="Белый">Белый</option>
+            <option value="Чернокожий, негр или афроамериканец">Чернокожий, негр или афроамериканец</option>
+            <option value="Индеец или коренной житель Аляски">Индеец или коренной житель Аляски</option>
+            <option value="Азиат">Азиат</option>
+            <option value="Гаваец или житель Океании">Гаваец или житель Океании</option>
+            <option value="Две или более расы">Две или более расы</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">Место обнаружения трупа</span>
+          <select class="form-select" id="sceneCounty">
+            <option selected disabled>Место</option>
+            <option value="Мужской">Город Лос-Сантос</option>
+            <option value="Женский">Город Палето-Бэй</option>
+            <option value="Женский">Город Сэнди-Шорс</option>
+            <option value="Женский">Округ Блэйн</option>
+          </select>
+          <input type="text" aria-label="Авеню/улица" id="sceneArea" placeholder="Район" class="form-control">
+          <input type="text" aria-label="Авеню/улица" id="sceneRoad" placeholder="Трасса" class="form-control">
+        </div>
+        <div class="col-sm-6 input-group" style="width: 50%;">
+          <input type="text" class="form-control" id="bodyFind_date" placeholder="МММ ДД, ГГГГ" >
+          <span class="input-group-text"><i class="fa-solid fa-magnifying-glass" data-toggle="tooltip" title="Время обнаружения трупа."></i></span>
+          <input type="text" class="form-control" id="bodyFind_time" placeholder="ЧЧ:ММ АМ/ПМ">
+        </div>
+        <div class="col-sm-6 input-group" style="width: 50%;">
+          <input type="text" class="form-control" id="bodyTransportation_date" placeholder="МММ ДД, ГГГГ" >
+          <span class="input-group-text"><i class="fa-solid fa-truck" data-toggle="tooltip" title="Время транспортировки трупа."></i></span>
+          <input type="text" class="form-control" id="bodyTransportation_time" placeholder="ЧЧ:ММ АМ/ПМ">
+        </div>
+
+        <h4 class="mt-5">Комментарии судебно-медицинского эксперта</h4>
+        <p class="mb-3">Дополнительные сведения, комментарии и обстоятельства, изложенные экспертом в ходе работы на месте преступления.</p>
+        <div class="mb-3">
+          <label for="submitted" class="form-label">Осмотр тела, его положения, характера травм</label>
+          <textarea class="form-control" id="commentObserveBody" rows="3" style="height: 100px;" placeholder="Заполнить"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="submitted" class="form-label">Осмотр места преступления</label>
+          <textarea class="form-control" id="commentObservePlace" rows="3" style="height: 100px;" placeholder="Заполнить"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="submitted" class="form-label">Иные обстоятельства</label>
+          <textarea class="form-control" id="commentObserveOther" rows="3" style="height: 100px;" placeholder="Заполнить"></textarea>
+        </div>
+        
+        <h4 class="mt-5">Фотографические материалы</h4>
+        <p class="mb-3">Фотофиксация тела трупа в исходном положении, произведенная экспертом на месте преступления.</p>
+        <div class="mb-3">
+          <label for="submitted" class="form-label">Фото тела и скриншот /damages или /cdamages</label>
+          <textarea class="form-control" id="photo" rows="3" style="height: 100px;" placeholder="Фото тела и скриншот /damages или /cdamages"></textarea>
+        </div>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
+          <input type="text" class="form-control" id="sign" placeholder="Ссылка на изображение, без [img]">
+        </div>
+      </div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary container-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="csureport()">Показать код</button>
   </form>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Форма полевого отчета медицинского эксперта</h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="exampleModalLabel">Код для вставки на форум</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
         </div>
         <div class="modal-body">
-          <p id="code"></p>
+          <div id="code"></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Закрыть окно</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          <!-- <button type="button" class="btn btn-primary" onclick="copyData('code')">Копировать код</button> -->
         </div>
       </div>
     </div>
   </div>
-  <script>
-    function csureport() {
-      var writeCode = document.getElementById('code');
-
-      var backhomeForm = document.getElementById('code');
-
-      document.getElementById("exampleModal").classList.toggle("active");
-      writeCode.innerHTML = "<h2>Название темы</h2> \
-      <code>Crime Scene Investiagtion "+document.getElementById('rn').value+"</code><br><br> \
-      <h2>Содержание</h2><code> \
-      [float=left][img]https://www.upload.ee/image/13524422/FSTD.png[/img][/float]<br> \
-      [float=right][size=85]Город Лос-Сантос, СА<br> \
-      район Веспуччи, Сан-Андреас авеню<br> \
-      Судебно-медицинская лаборатория<br> \
-      +1 (212) 6789 807[/size][/float]<br> \
-      [b][size=125][color=#004080]Los Santos Police Department[/color][/b][/size]<br> \
-      [b][size=100][color=#004080]Forensic Analysis Report System[/color][/b][/size]<br> \
-      <br> \
-      [adp]FOR OFFICIAL USE ONLY[/adp][br]<br> \
-      [br][center][borderb=black][size=125][b]CRIME SCENE INVESTIGATION NARRATIVE[/b][/size][/borderb][/center]<br> \
-      [br][float=left][size=85][b]Ответственный эксперт[/b] [/size]<br> \
-      [size=85]"+document.getElementById('rns').value+"[/size]<br> \
-      <br> \
-      [size=85][b]Для связи[/b] [/size]<br> \
-      [size=85]"+document.getElementById('pn').value+"[/size][/float]<br> \
-      <br> \
-      [float=right][size=85][b]Ответственный офицер[/b] [/size]<br> \
-      [center][size=85]"+document.getElementById('orns').value+"[/size][/center]<br> \
-      <br> \
-      <br> \
-      <br> \
-      [center][size=85][b]No. отчёта[/b][/size][/center]<br> \
-      [center][size=85]"+document.getElementById('rn').value+"[/size][/center][/float]<br> \
-      [br]<br> \
-      [br]<br> \
-      [br]<br> \
-      [br]<br> \
-      [center][borderb=black][size=125][b]DEAD BODY INSPECTION CARD[/b][/size][/borderb][/center]<br> \
-      [br][size=90][b]Тип смерти:[/b][/size]<br> \
-      [warning][color=#000000][size=85]Укажите тип инцидента, исходя из имеющихся в вашем распоряжении сведений, заменив обозначение (–) на (✓).[/size][/color][/warning]<br> \
-      [tab][tr][td][size=85][b]Насильственная смерть[/b][/size][/td][td][size=85]"+document.getElementById('deathType_vd').value+"[/size][/td][td][size=85][b]Несчастный случай[/b][/size][/td][td][size=85]"+document.getElementById('deathType_acc').value+"[/size][/td][td][size=85][b]Подозрительная смерть[/b][/size][/td][td][size=85]"+document.getElementById('deathType_sd').value+"[/size][/td][td][size=85][b]Инцидент, связанный с преступной группировкой[/b][/size][/td][td][size=85]"+document.getElementById('deathType_iicg').value+"[/size][/td][/tr][/tab]<br> \
-      <br> \
-      [br][size=90][b]Характер смерти:[/b][/size]<br> \
-      [warning][color=#000000][size=85]Классификация характера смерти по установленным в ходе осмотра предварительным обстоятельствам. Отметьте (✓).[/size][/color][/warning]<br> \
-      [tab][tr][td][size=85][b]Несчастный случай[/b][/size][/td][td][size=85]"+document.getElementById('deathManner_acc').value+"[/size][/td][td][size=85][b]Суицид[/b][/size][/td][td][size=85]"+document.getElementById('deathManner_suicide').value+"[/size][/td][td][size=85][b]Убийство[/b][/size][/td][td][size=85]"+document.getElementById('deathManner_homicide').value+"[/size][/td][td][size=85][b]Естественная смерть[/b][/size][/td][td][size=85]"+document.getElementById('deathManner_nd').value+"[/size][/td][td][size=85][b]Не установлен[/b][/size][/td][td][size=85]"+document.getElementById('deathManner_notinstalled').value+"[/size][/td][td][size=85][b]Расследуется[/b][/size][/td][td][size=85]"+document.getElementById('deathManner_underinvestigation').value+"[/size][/td][/tr][/tab]<br> \
-      <br> \
-      [br][size=90][b]Детали и установленные обстоятельства:[/b][/size]<br> \
-      [warning][color=#000000][size=85]Установленные в ходе осмотра места тела трупа обстоятельства, связанные с обстоятельствами наступления смерти лица.[/size][/color][/warning]<br> \
-      [tab][tr][td][size=85][b]Личные данные жертвы:[/b][/size][/td][td][size=85]"+document.getElementById('victimsID_namesurname').value+"[/size][/td][td][size=85]"+document.getElementById('victimsID_age').value+"[/size][/td][td][size=85]"+document.getElementById('victimsID_sex').value+"[/size][/td][td][size=85]"+document.getElementById('victimsID_race').value+"[/size][/td][/tr]<br> \
-      [tr][td][size=85][b]Место обнаружения трупа:[/b][/size][/td][td][size=85]"+document.getElementById('scene_place').value+"[/size][/td][td][size=85]"+document.getElementById('scene_area').value+"[/size][/td][td][size=85]"+document.getElementById('scene_road').value+"[/size][/td]<br> \
-      [tr][td][size=85][b]Время обнаружения трупа:[/b][/size][/td][td][size=85]"+document.getElementById('tdb_date').value+"[/size][/td][td][size=85]"+document.getElementById('tdb_time').value+"[/size][/td][/tr]<br> \
-      [tr][td][size=85][b]Время транспортировки трупа:[/b][/size][/td][td][size=85]"+document.getElementById('btt_date').value+"[/size][/td][td][size=85]"+document.getElementById('btt_time').value+"[/size][/td][/tr][/tab]<br> \
-      <br> \
-      [br][size=90][b]Комментарии судебно-медицинского эксперта:[/b][/size]<br> \
-      [warning][color=#000000][size=85]Дополнительные сведения, комментарии и обстоятельства, изложенные экспертом в ходе работы на месте преступления.[/size][/color][/warning]<br> \
-      [tab][tr][td][size=85][b]Осмотр тела, его положения, характера травм:[/b][/size][/td][td][size=85]"+document.getElementById('comment_bodycheck').value+"[/size][/td][/tr]<br> \
-      [tr][td][size=85][b]Осмотр места преступления:[/b][/size][/td][td][size=85]"+document.getElementById('comment_placecheck').value+"[/size][/td]<br> \
-      [tr][td][size=85][b]Иные обстоятельства:[/b][/size][/td][td][size=85]"+document.getElementById('comment_other').value+"[/size][/td][/tr][/tab]<br> \
-      <br> \
-      [br][size=90][b]Фотографические материалы:[/b][/size]<br> \
-      [warning][color=#000000][size=85]Фотофиксация тела трупа  в исходном положении, произведенная экспертом на месте преступления.[/size][/color][/warning]<br> \
-      [spoiler]"+document.getElementById('photo_links').value+"[/spoiler]<br> \
-      [br][right][size=85]"+document.getElementById('sign').value+"[/size][/right]<br> \
-      [hr][/hr][size=85][center]© 2022 FARS. Forensic Science & Technical Division[/center][/size]</code>";
-    }
-  </script>
+  <script src="examrequest.js"></script>
 </body>
 </html>
