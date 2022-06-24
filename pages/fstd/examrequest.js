@@ -33,8 +33,11 @@ function examrequest() {
     [color=#FFFFFF]![/color] <br>\
     [size=90][b]Задача экспертизы:[/b][/size] <br>\
     [warning][color=#000000][size=85]Укажите постановленные перед экспертом вопросы.[/size][/color][/warning] <br>\
-    [size=85]1. "+document.getElementById('task_1').value+" <br>\
-    2. "+document.getElementById('task_2').value+"[/size][/textarea][textarea][size=85][✓] Я подтверждаю, что поданный мною объект на исследование был изъят и отправлен на исследование законным путём без нарушения базового протокола и прав объектов правовых отношений; объект исследования не был повреждён или видоизменён любым образом с момента его изъятия. Отмечаю, что информация об описании объекта строится исключительно на моих собственных наблюдениях.[/size][hr][/hr][size=85][center]© 2021 FARS. Los Santos Police Department.[/center][/size][/textarea] <br>\
+    [size=85]"+document.getElementById('task_1').value+" <br>\
+    "+document.getElementById('task_2').value+"<br>\
+    "+document.getElementById('task_3').value+"<br>\
+    "+document.getElementById('task_4').value+"<br>\
+    "+document.getElementById('task_5').value+"[/size][/textarea][textarea][size=85][✓] Я подтверждаю, что поданный мною объект на исследование был изъят и отправлен на исследование законным путём без нарушения базового протокола и прав объектов правовых отношений; объект исследования не был повреждён или видоизменён любым образом с момента его изъятия. Отмечаю, что информация об описании объекта строится исключительно на моих собственных наблюдениях.[/size][hr][/hr][size=85][center]© 2021 FARS. Los Santos Police Department.[/center][/size][/textarea] <br>\
     [br][/br] <br>\
     [warning][color=#000000][size=85](( ООС-основания для экспертизы ))[/size][/color][/warning] <br>\
     [spoiler]"+document.getElementById('ooc').value+"[/spoiler]</code>";
