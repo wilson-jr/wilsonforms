@@ -28,6 +28,6 @@ function supervisornotification() {
   Прошу направить характеристику по указанному почтовому адресу в пятидневный срок. Для получения дополнительной информации, свяжитесь с сержантом Бюро - Дэвидом Асеведой.[/justify]<br><br>\
   <br><br>\
   <br><br>\
-  [br]С уважением, [i]"+document.getElementById('sledovatelName').value+" "+document.getElementById('sledovatelSurname').value+"[/i].[float=right][i]"+document.getElementById('sign').value+"[/i][/float]<br>\
+  [br]С уважением, [i]"+document.getElementById('sledovatelName').value+" "+document.getElementById('sledovatelSurname').value+"[/i].[float=right][i]"+document.getElementById('sign').value+"[/i][/float][/textarea]<br>\
   </code>";
 }
