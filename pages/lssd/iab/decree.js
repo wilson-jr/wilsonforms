@@ -1,4 +1,4 @@
-function test() {
+function decree() {
   var writeCode = document.getElementById('code');
 // 
 // 
