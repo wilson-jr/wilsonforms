@@ -83,12 +83,23 @@
           <div class="text-white">
             <h1 class="mb-3">Быстрое заполнение BBCode форм</h1>
             <h5 class="mb-2">Просто и понятно</h5>
-            <h6 class="mb-2">by extassyy</h6>
+            <h6 class="mb-2" id="count">0</h6>
             <a class="btn btn-outline-light btn-sm m-2" href="" role="button" rel="nofollow" target="_blank">Связаться с автором</a>
           </div>
         </div>
       </div>
     </div>
   </main>
+  <script>
+    const countEl = document.getElementById('count');
+    updateVisitCount();
+    function updateVisitCount() {
+      fetch('https://api.countapi.xyz/update/florin-popcom/codepen/?amount=1')
+      .then(res => res.json())
+      .then(res => {
+        countEl.innerHTML = res.value;
+      })
+    }
+  </script>
 </body>
 </html>
