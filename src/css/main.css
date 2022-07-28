@@ -11,3 +11,11 @@
   background: #F2F2F2;
   border-radius: 8px;
 }
+
+body {
+  background: #F1F1F1;
+}
+
+.none-selectable {
+  user-select: none;
+}
