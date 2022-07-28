@@ -1,36 +1,5 @@
-function summarycard() {
-  var writeCode = document.getElementById('code');
-
-  document.getElementById("exampleModal").classList.toggle("active");
-  writeCode.innerHTML = "<code> \
-    [textarea][float=right][size=80][i]Los Santons Police Department<br> \
-    Forensic Science & Tech Division<br> \
-    228 Palomino Ave., Vespucci<br> \
-    1' Police Headquarters[/i][/size][/float]<br> \
-    [float=left][img]https://www.upload.ee/image/13524422/FSTD.png[/img][/float]<br> \
-    <br> \
-    <br> \
-    <br> \
-    [center][b][size=125]SUMMARY CARD[/size]<br> \
-    [size=90][b]"+document.getElementById('surname').value+", "+document.getElementById('name').value+"[/b][/size][/center]<br> \
-    [br]<br> \
-    [hr]<br> \
-    [br]<br> \
-    [float=right][img]https://www.upload.ee/image/14044683/mugshot-personal-file.png[/img][br]<br> \
-    [br][center]"+document.getElementById('sign').value+"[/center][/float]<br> \
-    [float=left][b]Должность:[/b] "+document.getElementById('position').value+"[/float][br]<br> \
-    [float=left][b]Подразделение:[/b] "+document.getElementById('division').value+"[/float][br]<br> \
-    [float=left][b]Присвоенная квалификация:[/b] "+document.getElementById('qualification').value+"[/float][br]<br> \
-    [br]<br> \
-    [float=left][b]Пол:[/b] "+document.getElementById('sex').value+"[/float][br]<br> \
-    [float=left][b]Возраст:[/b] "+document.getElementById('age').value+"[/float][br]<br> \
-    [float=left][b]Место рождения:[/b] "+document.getElementById('placeofbirth').value+"[/float][br]<br> \
-    [float=left][b]Семейный статус:[/b] "+document.getElementById('status').value+"[/float][br]<br> \
-    [float=left][b]Ближ. родственник:[/b] "+document.getElementById('cousin').value+"[/float][br]<br> \
-    [br]<br> \
-    [float=left][b]Эл. адрес:[/b] "+document.getElementById('email').value+"[/float][br]<br> \
-    [float=left][b]Контактный номер:[/b] "+document.getElementById('number').value+"[/float][br]<br> \
-    [br]<br> \
-    [hr]<br> \
-    [br][b][center]© 2022 FSTD. Los Santos Police Department.[/center][/b][/textarea]</code>";
-}
+function summarycard(){var a=document.getElementById("code");document.getElementById("exampleModal").classList.toggle("active");a.innerHTML="<code>     [textarea][float=right][size=80][i]Los Santons Police Department<br>     Forensic Science & Tech Division<br>     228 Palomino Ave., Vespucci<br>     1' Police Headquarters[/i][/size][/float]<br>     [float=left][img]https://www.upload.ee/image/13524422/FSTD.png[/img][/float]<br>     <br>     <br>     <br>     [center][b][size=125]SUMMARY CARD[/size]<br>     [size=90][b]"+
+document.getElementById("surname").value+", "+document.getElementById("name").value+"[/b][/size][/center]<br>     [br]<br>     [hr]<br>     [br]<br>     [float=right][img]https://www.upload.ee/image/14044683/mugshot-personal-file.png[/img][br]<br>     [br][center]"+document.getElementById("sign").value+"[/center][/float]<br>     [float=left][b]\u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c:[/b] "+document.getElementById("position").value+"[/float][br]<br>     [float=left][b]\u041f\u043e\u0434\u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0438\u0435:[/b] "+
+document.getElementById("division").value+"[/float][br]<br>     [float=left][b]\u041f\u0440\u0438\u0441\u0432\u043e\u0435\u043d\u043d\u0430\u044f \u043a\u0432\u0430\u043b\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f:[/b] "+document.getElementById("qualification").value+"[/float][br]<br>     [br]<br>     [float=left][b]\u041f\u043e\u043b:[/b] "+document.getElementById("sex").value+"[/float][br]<br>     [float=left][b]\u0412\u043e\u0437\u0440\u0430\u0441\u0442:[/b] "+document.getElementById("age").value+
+"[/float][br]<br>     [float=left][b]\u041c\u0435\u0441\u0442\u043e \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f:[/b] "+document.getElementById("placeofbirth").value+"[/float][br]<br>     [float=left][b]\u0421\u0435\u043c\u0435\u0439\u043d\u044b\u0439 \u0441\u0442\u0430\u0442\u0443\u0441:[/b] "+document.getElementById("status").value+"[/float][br]<br>     [float=left][b]\u0411\u043b\u0438\u0436. \u0440\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a:[/b] "+document.getElementById("cousin").value+
+"[/float][br]<br>     [br]<br>     [float=left][b]\u042d\u043b. \u0430\u0434\u0440\u0435\u0441:[/b] "+document.getElementById("email").value+"[/float][br]<br>     [float=left][b]\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u044b\u0439 \u043d\u043e\u043c\u0435\u0440:[/b] "+document.getElementById("number").value+"[/float][br]<br>     [br]<br>     [hr]<br>     [br][b][center]\u00a9 2022 FSTD. Los Santos Police Department.[/center][/b][/textarea]</code>"};
