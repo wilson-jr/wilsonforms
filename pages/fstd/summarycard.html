@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Форма персональной карты сотрудника</title>
+  <title>Summary Card · Wilson Forms</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -32,19 +32,19 @@
       <div class="row g-3">
         <div class="input-group">
           <select class="form-select" id="position">
-            <option selected disabled>Выберите должность</option>
+            <option selected disabled>Должность</option>
             <option value="Forensic Technician">Forensic Technician</option>
             <option value="Medical Examiner">Medical Examiner</option>
             <option value="Polygraph Specialist">Polygraph Specialist</option>
           </select>
           <select class="form-select" id="division">
-            <option selected disabled>Выберите подразделение</option>
+            <option selected disabled>Подразделение</option>
             <option value="Crime Scene Unit">Forensic Science Division — Crime Scene Unit</option>
             <option value="Crime Scene Investigation">Forensic Science Division — Crime Scene Investigation</option>
             <option value="Behavioral & Psychoanalysis Unit">Technical Investigation Division — Behavioral & Psychoanalysis Unit</option>
           </select>
           <select class="form-select" id="qualification">
-            <option selected disabled>Выберите квалификацию</option>
+            <option selected disabled>Квалификация</option>
             <option value="General Qualification">General Qualification</option>
             <option value="Toxicology Qualification">Toxicology Qualification</option>
             <option value="Fingerprinting & Latent Print Qualification">Fingerprinting & Latent Print Qualification</option>
@@ -62,6 +62,13 @@
             <option value="Firearms & Toolmarks Qualification">Firearms & Toolmarks Qualification</option>
             <option value="Tracology & Trace Data Qualification">Tracology & Trace Data Qualification</option>
             <option value="Anthropologist Qualification">Anthropologist Qualification</option>
+          </select>
+          <select class="form-select" id="levelaccess">
+            <option selected disabled>Уровень доступа</option>
+            <option value="I Level Access">1-ый уровень доступа</option>
+            <option value="II Level Access">2-ой уровень доступа</option>
+            <option value="III Level Acces">3-ий уровень доступа</option>
+            <option value="IV Level Access">4-ый уровень доступа</option>
           </select>
         </div>
 
@@ -151,7 +158,7 @@
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
         <i class="fa-solid fa-code"></i>
-        <strong class="me-auto">   Система</strong>
+        <strong class="me-auto">   Системное уведомление</strong>
         <small>extassyy</small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
       </div>
