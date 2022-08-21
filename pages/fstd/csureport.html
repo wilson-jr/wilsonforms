@@ -236,14 +236,12 @@
 
         <div class="form-floating mb-3">
           <textarea class="form-control" style="height: 100px" v-model="commentFour"></textarea>
-          <label for="floatingInput">Иные обстоятельства</label>
+          <label for="floatingInput">Фотофиксация тела трупа  в исходном положении, произведенная экспертом на месте преступления</label>
         </div>
 
         
-        <div class="form-floating mb-3">
-          <textarea class="form-control" v-model="sign"></textarea>
-          <label for="floatingInput">Подпись</label>
-        </div>
+
+    	<input type="text" class="form-control" placeholder="Подпись" v-model="sign">
       </div>
       <!--  -->
       <br>
@@ -315,9 +313,6 @@
                   [spoiler]<span style="white-space: pre-line;">{{ commentFour }}</span>[/spoiler]<br>
                   [br][right][size=85]{{ sign }}[/size][/right]<br>
                   [hr][/hr][size=85][center]© 2022 FARS. Forensic Science & Technical Division[/center][/size]
-                  <span style="white-space: pre-line;">{{ commentOne }}</span><br>
-                  <span style="white-space: pre-line;">{{ commentTwo }}</span><br>
-                  <span style="white-space: pre-line;">{{ commentThree }}</span><br>
                 </code>
               </div>
             </div>
@@ -627,7 +622,7 @@
           			</span>
           		</div>
           		<div class="quotecontent">
-          			<div style="display:none">{{ commentFour }}</div>
+          			<div style="display:none"><span style="white-space: pre-line;">{{ commentFour }}</span></div>
           		</div>
           	</div>
           	<br>
