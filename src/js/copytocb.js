@@ -1,13 +1,1 @@
-function selectText(containerid) {
-  if (document.selection) {
-    var range = document.body.createTextRange();
-    range.moveToElementText(document.getElementById(containerid));
-    range.select();
-  } else if (window.getSelection) {
-    var range = document.createRange();
-    range.selectNode(document.getElementById(containerid));
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-  }
-}
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a){3(0.8){4 b=0.9.c();b.d(0.5(a));b.e()}f 3(1.2){4 b=0.g();b.h(0.5(a));1.2().i();1.2().j(b);0.k("l")}}',22,22,'document|window|getSelection|if|var|getElementById|function|selectText|selection|body|||createTextRange|moveToElementText|select|else|createRange|selectNode|removeAllRanges|addRange|execCommand|copy'.split('|'),0,{}))
