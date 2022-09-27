@@ -19,6 +19,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <!--  -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-the-mask/0.11.1/vue-the-mask.min.js"></script>
   <!--  -->
 </head>
 <body class="wrapper">
@@ -133,16 +134,20 @@
         </div>
       </div>
       
-      <div class="row g-3 mb-3">
-        <div class="col-sm-4">
+      <div class="row mb-3">
+        <div class="col">
           <label for="name" class="form-label">Электронный адрес</label>
           <input type="text" class="form-control" placeholder="Почта" v-model="email">
         </div>
-        <div class="col-sm-4">
+        <div class="col">
           <label for="name" class="form-label">Контактный номер</label>
           <input type="text" class="form-control" placeholder="Номер" v-model="number">
         </div>
-        <div class="col-sm-4">
+        <div class="col">
+          <label for="name" class="form-label">Номер банковского счёта</label>
+          <the-mask type="text" class="form-control" placeholder="0000 0000 0" masked="true" :mask="['#### #### #', '#### #### #']" v-model="bank" />
+        </div>
+        <div class="col">
           <label for="name" class="form-label">Подпись</label>
           <input type="text" class="form-control" placeholder="Подпись" v-model="sign">
         </div>
@@ -191,6 +196,7 @@
                 [br]<br>
                 [float=left][b]Эл. адрес:[/b] {{ email }}.[/float][br]<br>
                 [float=left][b]Контактный номер:[/b] {{ number }}.[/float][br]<br>
+                [float=left][b]Номер банковского счёта:[/b] {{ bank }}.[/float][br]<br>
                 [br]<br>
                 [hr]<br>
                 [br][b][center]© 2022 FSTD. Los Santos Police Department.[/center][/b][/textarea]
@@ -234,10 +240,12 @@
             <div style="float:left;padding:0 10px"><strong class="text-strong">Ближ. родственник:</strong> {{ rodstvennik }}.</div><br><br>
             <br>
             <div style="float:left;padding:0 10px"><strong class="text-strong">Эл. адрес:</strong> {{ email }}.</div><br>
-            <div style="float:left;padding:0 10px"><strong class="text-strong">Контактный номер:</strong> {{ number }}.</div><br><br>
-            <br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Контактный номер:</strong> {{ number }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Номер банковского счёта:</strong> {{ bank }}.</div><br><br>
+            <br>0000 0000 0
             <div style="width:100%;border-bottom:1px solid silver"> </div>
-            <br><strong class="text-strong"></strong><div style="text-align:center"><strong class="text-strong">© 2022 FSTD. Los Santos Police Department.</strong></div></div>
+            <br><strong class="text-strong"></strong><div style="text-align:center"><strong class="text-strong">© 2022 FSTD. Los Santos Police Department.</strong></div>
+          </div>
         </div>
       </div>
     </div>
@@ -258,7 +266,6 @@
   </div>
   <script src="/src/js/copytocb.js"></script>
   <script src="/src/js/uvedomlenie.js"></script>
-  <script src="summarycard.js"></script>
   <script>
     new Vue({
       el: "#app",
@@ -276,6 +283,7 @@
         rodstvennik: "",
         email: "",
         number: "",
+        bank: "",
         sign: ""
       }
     })
