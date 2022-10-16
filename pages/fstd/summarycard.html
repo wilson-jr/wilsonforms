@@ -1,194 +1,292 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="/dist/output.css" rel="stylesheet"> -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> -->
+  <title>Summary Card · Wilson Forms</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <link rel="stylesheet" href="../../src/css/main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!--  -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-the-mask/0.11.1/vue-the-mask.min.js"></script>
+  <!--  -->
 </head>
-<body>
-  <section id="incidentreport" class="bg-white">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-      <main aria-label="Main" class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6">
-        <div class="max-w-xl lg:max-w-4xl">
-          <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">Форма рапорта о происшествии</h1>
-          <p class="mt-4 leading-relaxed text-gray-500">Все имена и фамилии писать латиницей — как в оригинале. То есть, вместо ника на русском — пишите на английском. И не стоит забывать, что это IC тема.</p>
-          
-          
-          <form class="mt-8 grid grid-cols-6 gap-6">
-            
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Характер ситуации</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentCharacter"/>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Максимально точная дата и локация инцидента</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentDate"/>
-            </div>
-  
-            <div class="col-span-6">
-              <label class="block text-sm font-medium text-gray-700">Подробное описание ситуации</label>
-              <textarea type="email" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentDesc"></textarea>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Аудио-видеоматериалы</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentFiles"/>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Имеющиеся улики <span class="font-normal text-sm">(изъятое имущество и другое)</span></label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"  placeholder="Заполнить" v-model="incidentEvidence"/>
-            </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Опросы свидетелей</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"  placeholder="Заполнить" v-model="incidentInterrogation"/>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">(( Были ли на инциденте ЦК? ))</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"  placeholder="Да или нет. Если да, то впишите никнейм(ы)."v-model="incidentCK"/>
-            </div>
-  
-            <div class="col-span-6">
-              <label class="block text-sm font-medium text-gray-700">Имя, фамилия, значок помощника, контактный номер и адрес проживания подающего инцидент</label>
-              <input type="email" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Phone Number, Address" v-model="incidentDeputy"/>
-            </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Перечень имен и фамилий помощников, участвовавших в ситуации</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Name Surname, ..." v-model="incidentDeputies"/>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Перечень имен и фамилий помощников, применивших оружие или спец. средства</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Name Surname, ..." v-model="incidentDeputiesGun"/>
-            </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Имя, фамилия, звание старшего на ситуации</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Rank" v-model="incidentDeputySupervisor"/>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Имена и фамилии подозреваемых</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname (( Discord ))" v-model="incidentPeople1"/>
-            </div>
-
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Имена и фамилии потерпевших, номера телефонов</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Phone Number; ..." v-model="incidentPeople2"/>
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label class="block text-sm font-medium text-gray-700">Имена и фамилии свидетелей, номера телефонов</label>
-              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Phone Number; ..." v-model="incidentPeople3"/>
-            </div>
-            <!-- <div class="col-span-6">
-              <label for="MarketingAccept" class="flex gap-4">
-                <input type="checkbox" id="MarketingAccept" name="marketing_accept" class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"/>
-                <span class="text-sm text-gray-700">I want to receive emails about events, product updates and company announcements.</span>
-              </label>
-            </div> -->
-  
-            <div class="col-span-6">
-              <p class="text-sm text-gray-500">В случае возникновения ошибки свяжитесь с разработчиком <a href="https://discord.gg/6PcV8cMcJ8" target="_blank" class="text-gray-700 underline">сайта</a>.</p>
-            </div>
-  
-            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <!-- <button type="button" class="inline-block w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Создать отчет</button> -->
-              <button class="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none focus:ring" data-modal-toggle="code">
-                Создать отчет
-              </button>
-            </div>
-          </form>
+<body class="wrapper">
+  <style>
+    body { 
+      /* font-family: 'Inter', sans-serif;  */
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .wrapper { max-width: 1000px; position: relative; margin: 50px auto;}
+  </style>
+  <div class="py-5 text-center">
+    <h2><strong>Форма персональной карты сотрудника</strong></h2>
+    <!-- <p class="lead">фыв</p> -->
+  </div>
+  <form id="app">
+    <div class="container">
+      <!--  -->
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Имя </label>
+          <input type="text" class="form-control" placeholder="Aaron" v-model="name">
         </div>
-      </main>
-    </div>
-    <!-- Main modal -->
-    <div id="code" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-      <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
-          <!-- Modal content -->
-          <div class="relative bg-white rounded-lg shadow">
-              <!-- Modal header -->
-              <div class="flex justify-between items-start p-4 rounded-t border-b ">
-                  <h3 class="text-xl font-semibold text-gray-900">
-                      Готовый код
-                  </h3>
-                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="code">
-                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                      <span class="sr-only">Закрыть окно</span>
-                  </button>
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Фамилия </label>
+          <input type="text" class="form-control" placeholder="Wilson" v-model="surname">
+        </div>
+      </div>
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Должность</label>
+          <select class="form-select" v-model="position">
+            <option disabled value="">Выбор должности</option>
+            <option value="Forensic Technician">Криминалист-техник</option>
+            <option value="Medical Examiner">Судебно-медицинский эксперт</option>
+            <option value="Polygraph Specialist">Специалист полиграфолог</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Подразделение</label>
+          <select class="form-select" v-model="division">
+            <option disabled value="">Выбор подразделения</option>
+            <option value="Crime Scene Unit">Юнит по работе на сцене преступления</option>
+            <option value="Crime Scene Investigation">Юнит по расследованию сцены преступления</option>
+            <option value="Behavioral & Psychoanalysis Unit">Юнит поведенческой оценки и психоанализа</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Квалификация</label>
+          <select class="form-select" v-model="qualification">
+            <option disabled value="">Выбор квалификации</option>
+            <option value="General Qualification">Эксперт общей квалификации</option>
+            <option value="Toxicology Qualification">Эксперт по токсикологии</option>
+            <option value="Fingerprinting & Latent Print Qualification">Эксперт по дактилоскопии и скрытым отпечаткам</option>
+            <option value="Biology & DNA Analysis Qualification">Эксперт по биологическому анализу и ДНК</option>
+            <option value="Firearms & Toolmarks Qualification">Эксперт по огнестрельному оружию и его элементам</option>
+            <option value="Tracology & Trace Data Qualification">Эксперт по трасологии и следовым данным</option>
+            <option value="Transport & Tracology Qualification">Эксперт по транспорто-трасологии</option>
+            <option value="Questioned Documents Qualification">Эксперт по работе с сомнительными документами</option>
+            <option value="Digital & Multimedia Specialist">Эксперт по компьютерно-техническим экспертизам</option>
+            <option value="Linguistics & Handwriting Qualification">Эксперт по лингвистике и почерковедению</option>
+            <option value="Anthropologist Qualification">Эксперт по антропологии</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Уровень доступа</label>
+          <select class="form-select" v-model="levelaccess">
+            <option disabled value="">Выбор уровня доступа</option>
+            <option value="I Level Access">1-ый уровень доступа</option>
+            <option value="II Level Access">2-ой уровень доступа</option>
+            <option value="III Level Acces">3-ий уровень доступа</option>
+            <option value="IV Level Access">4-ый уровень доступа</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-sm-3">
+          <label for="name" class="form-label">Биологический пол</label>
+          <select class="form-select" v-model="sex">
+            <option disabled value="">Выбор биологического пола</option>
+            <option value="Мужской">Мужчина</option>
+            <option value="Женский">Женщина</option>
+          </select>
+        </div>
+        <div class="col-sm-3">
+          <label for="name" class="form-label">Возраст</label>
+          <input type="number" min="21" max="99" maxlength="2" class="form-control" placeholder="21" v-model="age">
+        </div>
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Место рождения</label>
+          <input type="text" class="form-control" placeholder="Страна, штат/провинция/регион, город, улица" v-model="pob">
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Семейный статус</label>
+          <select class="form-select" v-model="marriagestatus">
+            <option disabled value="">Выбор семейного статуса</option>
+            <option value="Не замужем / не женат">Не замужем / не женат</option>
+            <option value="Замужем / женат">Замужем / женат</option>
+            <option value="Разведен / разведена">Разведен / разведена</option>
+            <option value="Вдовец / вдова">Вдовец / вдова</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="name" class="form-label">Ближний родственник</label>
+          <input type="text" class="form-control" placeholder="Name Surname" v-model="rodstvennik">
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col">
+          <label for="name" class="form-label">Электронный адрес</label>
+          <input type="text" class="form-control" placeholder="Почта" v-model="email">
+        </div>
+        <div class="col">
+          <label for="name" class="form-label">Контактный номер</label>
+          <input type="text" class="form-control" placeholder="Номер" v-model="number">
+        </div>
+        <div class="col">
+          <label for="name" class="form-label">Номер банковского счёта</label>
+          <the-mask type="text" class="form-control" placeholder="0000 0000 0" masked="true" :mask="['#### #### #', '#### #### #']" v-model="bank" />
+        </div>
+        <div class="col">
+          <label for="name" class="form-label">Подпись</label>
+          <input type="text" class="form-control" placeholder="Подпись" v-model="sign">
+        </div>
+      </div>
+      <!--  -->
+      <br>
+      <button type="button" class="btn btn-primary container-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="summarycard()">Показать код</button>
+      <br></br>
+      <button class="btn btn-outline-primary container-fluid" type="button" data-bs-toggle="collapse" data-bs-target="#preview" aria-expanded="false" aria-controls="preview">Предпросмотр формы</button>
+      <!-- modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Код для вставки на форум</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <samp id="code">
+                [textarea][float=right][size=80][i]Los Santons Police Department<br>
+                Forensic Science & Tech Division<br>
+                228 Palomino Ave., Vespucci<br>
+                1' Police Headquarters[/i][/size][/float]<br>
+                [float=left][img]https://www.upload.ee/image/13524422/FSTD.png[/img][/float]<br>
+                <br>
+                <br>
+                <br>
+                [center][b][size=125]SUMMARY CARD[/size]<br>
+                [size=90][b]{{ surname }}, {{ name }}[/b][/size][/center]<br>
+                [br]<br>
+                [hr]<br>
+                [br]<br>
+                [float=right][img]https://www.upload.ee/image/14044683/mugshot-personal-file.png[/img][br]<br>
+                [br][center]{{ sign }}[/center][/float]<br>
+                [float=left][b]Должность:[/b] {{ position }}.[/float][br]<br>
+                [float=left][b]Подразделение:[/b] {{ division }}.[/float][br]<br>
+                [float=left][b]Присвоенная квалификация:[/b] {{ qualification }}.[/float][br]<br>
+                [float=left][b]Уровень доступа:[/b] {{ levelaccess }}.[/float][br]<br>
+                [br]<br>
+                [float=left][b]Пол:[/b] {{ sex }}.[/float][br]<br>
+                [float=left][b]Возраст:[/b] {{ age }}.[/float][br]<br>
+                [float=left][b]Место рождения:[/b] {{ pob }}.[/float][br]<br>
+                [float=left][b]Семейный статус:[/b] {{ marriagestatus }}.[/float][br]<br>
+                [float=left][b]Ближ. родственник:[/b] {{ rodstvennik }}.[/float][br]<br>
+                [br]<br>
+                [float=left][b]Эл. адрес:[/b] {{ email }}.[/float][br]<br>
+                [float=left][b]Контактный номер:[/b] {{ number }}.[/float][br]<br>
+                [float=left][b]Номер банковского счёта:[/b] {{ bank }}.[/float][br]<br>
+                [br]<br>
+                [hr]<br>
+                [br][b][center]© 2022 FSTD. Los Santos Police Department.[/center][/b][/textarea]
+                </samp>
               </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                  <code id="code" class="text-sm tracking-tight leading-3 text-black">
-                    [box=#FFFFFF][center][lssdheader]<br>
-                    <br>
-                    [size=85][b][color=#FFFFFF]LOS SANTOS SHERIFF'S DEPARTMENT[/color][/b][/size][/center][/box]<br>
-                    [box=white][center][size=85][b]INCIDENT REPORT[/b][/size][/center]<br>
-                    <br>
-                    [size=85][list][*][b][size=150]СИТУАТИВНЫЙ БЛОК[/size][/b]<br>
-                    <br>
-                    [b]Характер ситуации:[/b] {{ incidentCharacter }}<br>
-                    [b]Максимально точная дата и локация инцидента:[/b] {{ incidentDate }}<br>
-                    [b]Подробное описание ситуации:[/b] {{ incidentDesc }}<br>
-                    [b]Аудио-видеоматериалы:[/b] {{ incidentFiles }}<br>
-                    [b]Имеющиеся улики:[/b] {{ incidentEvidence }}<br>
-                    [b]Опросы свидетелей:[/b] {{ incidentInterrogation }}<br>
-                    [b](( Были ли на инциденте ЦК? ))[/b] {{ incidentCK }}[/size]<br>
-                    [size=85][br][*][b][size=150]ИНФОРМАЦИЯ ОБ УЧАСТНИКАХ[/size][/b]<br>
-                    <br>
-                    [b]Имя, фамилия, значок помощника, контактный номер и адрес проживания подающего инцидент:[/b] {{ incidentDeputy }}<br>
-                    [b]Перечень имен и фамилий помощников, участвовавших в ситуации:[/b] {{ incidentDeputies }}<br>
-                    [b]Перечень имен и фамилий помощников, применивших оружие или спец. средства:[/b] {{ incidentDeputiesGun }}<br>
-                    [b]Имя, фамилия, звание старшего на ситуации:[/b] {{ incidentDeputySupervisor }}<br>
-                    [b]Имена и фамилии подозреваемых:[/b] {{ incidentPeople1 }}<br>
-                    [b]Имена и фамилии потерпевших, номера телефонов:[/b] {{ incidentPeople2 }}<br>
-                    [b]Имена и фамилии свидетелей, номера телефонов:[/b] {{ incidentPeople3 }}[/size]<br>
-                    [size=85][br][*][b][size=150]ДЛЯ ДЕТЕКТИВОВ/СЛЕДОВАТЕЛЕЙ[/size][/b]<br>
-                    <br>
-                    [b]Имя, фамилия детектива/следователя, принявшего отчёт:[/b] Заполнить<br>
-                    [b]Подразделение, что приняло отчёт в обработку:[/b] Заполнить<br>
-                    [b]Дата принятия:[/b] Заполнить[/size][/box]
-                  </code>
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
-                  <button type="button" class="text-white bg-blue-700 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none focus:ring font-medium rounded-lg text-sm px-5 py-2.5 text-center" onclick="selectText('code')">Скопировать код</button>
-                  <!-- <button data-modal-toggle="code" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2  focus:ring-blue-300 focus:ring-offset-2 focus:outline-none focus:ring rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Decline</button> -->
-              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+              <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="selectText('code')">Копировать код</button>
+            </div>
           </div>
+        </div>
+      </div>
+      <!-- preview -->
+      <br>
+      <br>
+      <div class="collapse" id="preview">
+        <div class="card card-body">
+          <div style="border:1px solid black;padding:10px;background-color:rgb(255,255,255);color:rgb(0,0,0)"><div style="float:right;padding:0 10px"><span style="font-size:80%;line-height:116%"><em class="text-italics">Los Santons Police Department<br>
+            Forensic Science &amp; Tech Division<br>
+            228 Palomino Ave., Vespucci<br>
+            1' Police Headquarters</em></span></div>
+            <div style="float:left;padding:0 10px"><img src="https://www.upload.ee/image/13524422/FSTD.png" class="postimage" alt="Изображение"></div>
+            <br>
+            <div style="text-align:center"><strong class="text-strong"><span style="font-size:125%;line-height:116%">SUMMARY CARD</span><br>
+            <span style="font-size:90%;line-height:116%"><strong class="text-strong">{{ surname }}, {{ name }}</strong></span></strong></div><strong class="text-strong"><br>
+            <br></strong>
+            <div style="width:100%;border-bottom:1px solid silver"> </div>
+            <br>
+            <div style="float:right;padding:0 10px"><img src="https://www.upload.ee/image/14044683/mugshot-personal-file.png" class="postimage" alt="Изображение"><br><br>
+            <br><div style="text-align:center">{{ sign }}</div></div>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Должность:</strong> {{ position }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Подразделение:</strong> {{ division }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Присвоенная квалификация:</strong> {{ qualification }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Уровень доступа:</strong> {{ levelaccess }}.</div><br><br>
+            <br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Пол:</strong> {{ sex }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Возраст:</strong> {{ age }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Место рождения:</strong> {{ pob }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Семейный статус:</strong> {{ marriagestatus }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Ближ. родственник:</strong> {{ rodstvennik }}.</div><br><br>
+            <br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Эл. адрес:</strong> {{ email }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Контактный номер:</strong> {{ number }}.</div><br>
+            <div style="float:left;padding:0 10px"><strong class="text-strong">Номер банковского счёта:</strong> {{ bank }}.</div><br><br>
+            <br>0000 0000 0
+            <div style="width:100%;border-bottom:1px solid silver"> </div>
+            <br><strong class="text-strong"></strong><div style="text-align:center"><strong class="text-strong">© 2022 FSTD. Los Santos Police Department.</strong></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </form>
+  <!-- uvedomlenie -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3 none-selectable">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="fa-solid fa-code"></i>
+        <strong class="me-auto">   Системное уведомление</strong>
+        <small>extassyy</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+      <div class="toast-body">
+        Код скопирован в буфер обмена.
+      </div>
+    </div>
+  </div>
   <script src="/src/js/copytocb.js"></script>
-  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="/src/js/uvedomlenie.js"></script>
   <script>
-		new Vue({
-			el: "#incidentreport",
-			data: {
-				incidentCharacter: "",
-				incidentDate: "",
-				incidentDesc: "",
-				incidentFiles: "",
-				incidentEvidence: "",
-				incidentInterrogation: "",
-				incidentCK: "",
-				incidentDeputy: "",
-				incidentDeputies: "",
-				incidentDeputiesGun: "",
-				incidentDeputySupervisor: "",
-				incidentPeople1: "",
-				incidentPeople2: "",
-				incidentPeople3: ""
-			}
-		})
-	</script>
+    new Vue({
+      el: "#app",
+      data: {
+        name: "Aaron",
+        surname: "Wilson",
+        position: "",
+        division: "",
+        qualification: "",
+        levelaccess: "",
+        sex: "",
+        age: "",
+        pob: "",
+        marriagestatus: "",
+        rodstvennik: "",
+        email: "",
+        number: "",
+        bank: "",
+        sign: ""
+      }
+    })
+  </script>
 </body>
 </html>
