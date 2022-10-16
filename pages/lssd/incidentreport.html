@@ -11,9 +11,9 @@
 </head>
 <body>
   <section id="incidentreport" class="bg-white">
-    <div class="mx-auto max-w-screen-xl px- sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
       <main aria-label="Main" class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6">
-        <div class="max-w-xl lg:max-w-3xl">
+        <div class="max-w-xl lg:max-w-4xl">
           <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">Форма рапорта о происшествии</h1>
           <p class="mt-4 leading-relaxed text-gray-500">Все имена и фамилии писать латиницей — как в оригинале. То есть, вместо ника на русском — пишите на английском. И не стоит забывать, что это IC тема.</p>
           
@@ -127,7 +127,7 @@
               </div>
               <!-- Modal body -->
               <div class="p-6 space-y-6">
-                  <code class="text-sm tracking-tight leading-3 text-black">
+                  <code id="code" class="text-sm tracking-tight leading-3 text-black">
                     [box=#FFFFFF][center][lssdheader]<br>
                     <br>
                     [size=85][b][color=#FFFFFF]LOS SANTOS SHERIFF'S DEPARTMENT[/color][/b][/size][/center][/box]<br>
@@ -160,13 +160,14 @@
               </div>
               <!-- Modal footer -->
               <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
-                  <button data-modal-toggle="code" type="button" class="text-white bg-blue-700 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none focus:ring font-medium rounded-lg text-sm px-5 py-2.5 text-center">I accept</button>
-                  <button data-modal-toggle="code" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2  focus:ring-blue-300 focus:ring-offset-2 focus:outline-none focus:ring rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Decline</button>
+                  <button type="button" class="text-white bg-blue-700 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none focus:ring font-medium rounded-lg text-sm px-5 py-2.5 text-center" onclick="selectText('code')">Скопировать код</button>
+                  <!-- <button data-modal-toggle="code" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2  focus:ring-blue-300 focus:ring-offset-2 focus:outline-none focus:ring rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Decline</button> -->
               </div>
           </div>
       </div>
     </div>
   </section>
+  <script src="/src/js/copytocb.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
   <script>
 		new Vue({
