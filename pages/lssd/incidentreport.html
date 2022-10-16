@@ -1,85 +1,193 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Меню · Wilson Forms</title>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link href="/dist/output.css" rel="stylesheet"> -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" /> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+</head>
+<body>
+  <section id="incidentreport" class="bg-white">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <main aria-label="Main" class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6">
+        <div class="max-w-xl lg:max-w-3xl">
+          <h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">Форма рапорта о происшествии</h1>
+          <p class="mt-4 leading-relaxed text-gray-500">Все имена и фамилии писать латиницей — как в оригинале. То есть, вместо ника на русском — пишите на английском. И не стоит забывать, что это IC тема.</p>
+          
+          
+          <form class="mt-8 grid grid-cols-6 gap-6">
+            
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Характер ситуации</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentCharacter"/>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Максимально точная дата и локация инцидента</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentDate"/>
+            </div>
+  
+            <div class="col-span-6">
+              <label class="block text-sm font-medium text-gray-700">Подробное описание ситуации</label>
+              <textarea type="email" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentDesc"></textarea>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Аудио-видеоматериалы</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Заполнить" v-model="incidentFiles"/>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Имеющиеся улики <span class="font-normal text-sm">(изъятое имущество и другое)</span></label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"  placeholder="Заполнить" v-model="incidentEvidence"/>
+            </div>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Опросы свидетелей</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"  placeholder="Заполнить" v-model="incidentInterrogation"/>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">(( Были ли на инциденте ЦК? ))</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"  placeholder="Да или нет. Если да, то впишите никнейм(ы)."v-model="incidentCK"/>
+            </div>
+  
+            <div class="col-span-6">
+              <label class="block text-sm font-medium text-gray-700">Имя, фамилия, значок помощника, контактный номер и адрес проживания подающего инцидент</label>
+              <input type="email" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Phone Number, Address" v-model="incidentDeputy"/>
+            </div>
 
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Перечень имен и фамилий помощников, участвовавших в ситуации</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Name Surname, ..." v-model="incidentDeputies"/>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Перечень имен и фамилий помощников, применивших оружие или спец. средства</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Name Surname, ..." v-model="incidentDeputiesGun"/>
+            </div>
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Имя, фамилия, звание старшего на ситуации</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Rank" v-model="incidentDeputySupervisor"/>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Имена и фамилии подозреваемых</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname (( Discord ))" v-model="incidentPeople1"/>
+            </div>
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="heroes.css" rel="stylesheet">
-  </head>
-  <body>
-  <main>
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
-      <h1 class="display-4 fw-bold">Быстрое заполнение BBCode форм</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Приятный на глаз дизайн, отсутствие вырвиглазных цветов и интуитивно понятный интерфейс, который практически не нуждается в объяснениях.</p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" style="border-radius: 30px;">Перейти к заполнению</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4" style="border-radius: 30px;">Secondary</button>
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Имена и фамилии потерпевших, номера телефонов</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Phone Number; ..." v-model="incidentPeople2"/>
+            </div>
+  
+            <div class="col-span-6 sm:col-span-3">
+              <label class="block text-sm font-medium text-gray-700">Имена и фамилии свидетелей, номера телефонов</label>
+              <input type="text" class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm" placeholder="Name Surname, Phone Number; ..." v-model="incidentPeople3"/>
+            </div>
+            <!-- <div class="col-span-6">
+              <label for="MarketingAccept" class="flex gap-4">
+                <input type="checkbox" id="MarketingAccept" name="marketing_accept" class="h-5 w-5 rounded-md border-gray-200 bg-white shadow-sm"/>
+                <span class="text-sm text-gray-700">I want to receive emails about events, product updates and company announcements.</span>
+              </label>
+            </div> -->
+  
+            <div class="col-span-6">
+              <p class="text-sm text-gray-500">В случае возникновения ошибки свяжитесь с разработчиком <a href="https://discord.gg/6PcV8cMcJ8" target="_blank" class="text-gray-700 underline">сайта</a>.</p>
+            </div>
+  
+            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+              <!-- <button type="button" class="inline-block w-full focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Создать отчет</button> -->
+              <button class="inline-block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none focus:ring" data-modal-toggle="code">
+                Создать отчет
+              </button>
+            </div>
+          </form>
         </div>
-      </div>
-      <div class="overflow-hidden" style="max-height: 30vh;">
-        <div class="container px-5">
-          <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
-        </div>
+      </main>
+    </div>
+    <!-- Main modal -->
+    <div id="code" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+      <div class="relative p-4 w-full max-w-4xl h-full md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+              <!-- Modal header -->
+              <div class="flex justify-between items-start p-4 rounded-t border-b ">
+                  <h3 class="text-xl font-semibold text-gray-900">
+                      Готовый код
+                  </h3>
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="code">
+                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      <span class="sr-only">Закрыть окно</span>
+                  </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-6 space-y-6">
+                  <code class="text-sm tracking-tight leading-3 text-black">
+                    [box=#FFFFFF][center][lssdheader]<br>
+                    <br>
+                    [size=85][b][color=#FFFFFF]LOS SANTOS SHERIFF'S DEPARTMENT[/color][/b][/size][/center][/box]<br>
+                    [box=white][center][size=85][b]INCIDENT REPORT[/b][/size][/center]<br>
+                    <br>
+                    [size=85][list][*][b][size=150]СИТУАТИВНЫЙ БЛОК[/size][/b]<br>
+                    <br>
+                    [b]Характер ситуации:[/b] {{ incidentCharacter }}<br>
+                    [b]Максимально точная дата и локация инцидента:[/b] {{ incidentDate }}<br>
+                    [b]Подробное описание ситуации:[/b] {{ incidentDesc }}<br>
+                    [b]Аудио-видеоматериалы:[/b] {{ incidentFiles }}<br>
+                    [b]Имеющиеся улики:[/b] {{ incidentEvidence }}<br>
+                    [b]Опросы свидетелей:[/b] {{ incidentInterrogation }}<br>
+                    [b](( Были ли на инциденте ЦК? ))[/b] {{ incidentCK }}[/size]<br>
+                    [size=85][br][*][b][size=150]ИНФОРМАЦИЯ ОБ УЧАСТНИКАХ[/size][/b]<br>
+                    <br>
+                    [b]Имя, фамилия, значок помощника, контактный номер и адрес проживания подающего инцидент:[/b] {{ incidentDeputy }}<br>
+                    [b]Перечень имен и фамилий помощников, участвовавших в ситуации:[/b] {{ incidentDeputies }}<br>
+                    [b]Перечень имен и фамилий помощников, применивших оружие или спец. средства:[/b] {{ incidentDeputiesGun }}<br>
+                    [b]Имя, фамилия, звание старшего на ситуации:[/b] {{ incidentDeputySupervisor }}<br>
+                    [b]Имена и фамилии подозреваемых:[/b] {{ incidentPeople1 }}<br>
+                    [b]Имена и фамилии потерпевших, номера телефонов:[/b] {{ incidentPeople2 }}<br>
+                    [b]Имена и фамилии свидетелей, номера телефонов:[/b] {{ incidentPeople3 }}[/size]<br>
+                    [size=85][br][*][b][size=150]ДЛЯ ДЕТЕКТИВОВ/СЛЕДОВАТЕЛЕЙ[/size][/b]<br>
+                    <br>
+                    [b]Имя, фамилия детектива/следователя, принявшего отчёт:[/b] Заполнить<br>
+                    [b]Подразделение, что приняло отчёт в обработку:[/b] Заполнить<br>
+                    [b]Дата принятия:[/b] Заполнить[/size][/box]
+                  </code>
+              </div>
+              <!-- Modal footer -->
+              <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
+                  <button data-modal-toggle="code" type="button" class="text-white bg-blue-700 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none focus:ring font-medium rounded-lg text-sm px-5 py-2.5 text-center">I accept</button>
+                  <button data-modal-toggle="code" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2  focus:ring-blue-300 focus:ring-offset-2 focus:outline-none focus:ring rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10">Decline</button>
+              </div>
+          </div>
       </div>
     </div>
-  </main>
-  </body>
+  </section>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script>
+		new Vue({
+			el: "#incidentreport",
+			data: {
+				incidentCharacter: "",
+				incidentDate: "",
+				incidentDesc: "",
+				incidentFiles: "",
+				incidentEvidence: "",
+				incidentInterrogation: "",
+				incidentCK: "",
+				incidentDeputy: "",
+				incidentDeputies: "",
+				incidentDeputiesGun: "",
+				incidentDeputySupervisor: "",
+				incidentPeople1: "",
+				incidentPeople2: "",
+				incidentPeople3: ""
+			}
+		})
+	</script>
+</body>
 </html>
