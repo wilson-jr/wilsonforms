@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAPR Gossip Bot</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+  <link rel="stylesheet" href="../../src/css/main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body class="wrapper">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .wrapper { max-width: 1000px; position: relative; margin: 50px auto;}
+  </style>
+  <div class="py-5 text-center">
+    <h2><strong>Пустить новый слушок</strong></h2>
+  </div>
+  <form id="csureport" method="post">
+    <div class="container">
+      <h6 class="mb-3">— Давайте распустим грязные сплетни. Мы же оба видели, как Сквиртни с Дикки, словно сладкая парочка, уехали вместе домой после смены. Какими же они там грязными вещами занимались? Надо срочно всем рассказать!</h6>
+      <div class="input-group mb-3">
+        <textarea class="form-control" id="gossip">Вчера я видел....</textarea>
+      </div>
+      <button type="button" class="btn btn-primary container-fluid" onclick="sendMessage()">Распустить сплетни</button>
+    </div>
+  </form>
+  <script>
+  function sendMessage() {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1086349219096449075/dim6Hh7Y85KyXvIzw1Txbo4Ha2VyvWdhejV9FJcgYAMb8Y-BPgSLDjcKjfSBoKlBKrQu");
+    request.setRequestHeader('Content-type', 'application/json');
+    const gossip = {
+      content: null,
+      embeds: [
+        {
+          description: document.getElementById('gossip').value,
+          color: null,
+          author: {
+            name: "Кто-то пустил новый слушок.",
+            icon_url: "https://em-content.zobj.net/thumbs/160/apple/325/shushing-face_1f92b.png"
+          },
+          footer: {
+            text: "by extassyy",
+            icon_url: "https://i.imgur.com/ffmN1F0.jpg"
+          }
+        }
+      ],
+      username: "SAPR Gossips Bot",
+    }
+    request.send(JSON.stringify(gossip));
+  }
+  </script>
+  </body>
+</html>
